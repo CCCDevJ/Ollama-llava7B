@@ -10,6 +10,8 @@ app = FastAPI()
 # Directory to save uploaded images
 upload_dir = "uploaded_images"
 os.makedirs(upload_dir, exist_ok=True)
+model = "llava:13b"
+# model = "llava:34b"
 
 
 @app.post("/process_image")
@@ -36,7 +38,7 @@ async def process_image(prompt: str = Form(...), file: UploadFile = File(...)):
         # Prepare the payload for the external API request
         url = "http://localhost:11434/api/generate"
         payload = {
-            "model": "llava",
+            "model": model,
             "prompt": prompt,
             "stream": False,
             "images": [image_base64]

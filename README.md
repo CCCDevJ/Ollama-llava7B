@@ -1,4 +1,4 @@
-# Ollama llava:7B with Image Chat using FastAPI
+# Ollama llava with Image Chat using FastAPI
 
 - install `requirements.txt`
 - run `app.py` for static demo

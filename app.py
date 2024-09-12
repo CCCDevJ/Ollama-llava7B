@@ -11,9 +11,11 @@ with open(image_path, 'rb') as image_file:
 
 url = "http://localhost:11434/api/generate"
 prompt = "what's in this picture?"
+model = "llava:13b"
+# model = "llava:34b"
 
 payload = {
-    "model": "llava",
+    "model": model,
     "prompt": prompt,
     "stream": False,
     "images": [image_base64]
